@@ -70,6 +70,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
 
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
     androidTestImplementation("androidx.test.ext:junit:1.3.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))

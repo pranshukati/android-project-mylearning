@@ -54,10 +54,9 @@ fun RaceTrackerApp() {
         RaceParticipant(name = "Player 2", progressIncrement = 2)
     }
     var raceInProgress by remember { mutableStateOf(false) }
-
     if (raceInProgress) {
         LaunchedEffect(playerOne, playerTwo) {
-            coroutineScope {
+            coroutineScope { 
                 launch { playerOne.run() }
                 launch { playerTwo.run() }
             }

@@ -1,4 +1,4 @@
 package com.example.lunchtrayapp.ui
 
-class LunchTrayViewModel {
+class LunchTrayViewModel  {
 }

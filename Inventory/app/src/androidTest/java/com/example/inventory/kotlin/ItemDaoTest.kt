@@ -60,4 +60,30 @@ class ItemDaoTest {
         Assert.assertEquals(allItems[0], item1)
         Assert.assertEquals(allItems[1], item2)
     }
+    @Test
+    @Throws(Exception::class)
+    fun daoUpdateItems_updatesItemsInDB() = runBlocking {
+        addTwoItemsToDb()
+        itemDao.update(Item(1, "Apples", 15.0, 25))
+        itemDao.update(Item(2, "Bananas", 5.0, 50))
+        val allItems = itemDao.getAllItems().first()
+        Assert.assertEquals(allItems[0], Item(1, "Apples", 15.0, 25))
+        Assert.assertEquals(allItems[1], Item(2, "Bananas", 5.0, 50))
+    }
+    @Test
+    @Throws(Exception::class)
+    fun daoDeleteItems_deletesAllItemsFromDB() = runBlocking {
+        addTwoItemsToDb()
+        itemDao.delete(item1)
+        itemDao.delete(item2)
+        val allItems = itemDao.getAllItems().first()
+        Assert.assertEquals(allItems.size, 0)
+    }
+    @Test
+    @Throws(Exception::class)
+    fun daoGetItem_returnsItemFromDB() = runBlocking {
+        addOneItemToDb()
+        val item = itemDao.getItem(1)
+        Assert.assertEquals(item.first(), item1)
+    }
 }

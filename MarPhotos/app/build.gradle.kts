@@ -73,7 +73,8 @@ dependencies {
     // Kotlin serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
-
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.4.0")
     // Retrofit with Kotlin serialization Converter
 
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
